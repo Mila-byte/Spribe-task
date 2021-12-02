@@ -1,1 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+button.btn {
+  &:hover {
+    filter: brightness(150%);
+  }
+}
+header, .button {
+  background: #7749f8;
+}
+
+.container {
+  @media (min-width: 576px) {
+    padding: inherit;
+  }
+}
+
+.violet-button {
+  border: 1px solid #7749f8;
+  color: #7749f8;
+  background: #fff;
+}
+
+.form-file {
+  right: -40px;
+  top: 40px;
+}
+
+.profile-data {
+  margin-bottom: 45px;
+}
+
+.profile-buttons {
+  margin-top: 7px;
+}
+
+.btn-close {
+  width: 20px;
+}
+
+.form-control:focus {
+  border: 1px solid black;
+  box-shadow: none;
+}
+
+.form-control:valid:focus, .form-control:invalid:focus {
+  box-shadow: none;
+}
+
+.invalid-feedback {
+  font-size: 12px;
+}
+.violet-button {
+  border: 1px solid #7749f8;
+  color: #7749f8;
+  background: #fff;
+}
+
+.profile-data {
+  margin-bottom: 45px;
+}
+
+.profile-buttons {
+  margin-top: 7px;
+}
+
+.form-file {
+  right: -40px;
+  top: 40px;
+}
+
+.btn-close {
+  width: 20px;
+}
+
+.form-control:focus {
+  border: 1px solid black;
+  box-shadow: none;
+}
+
+.form-control:valid:focus, .form-control:invalid:focus {
+  box-shadow: none;
+}
+
+.invalid-feedback {
+  font-size: 12px;
+}
+

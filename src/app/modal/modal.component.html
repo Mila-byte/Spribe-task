@@ -1,0 +1,18 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-3">
+        <h5 class="modal-title fw-bolder" id="exampleModalLabel">Remove profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="cancel()"></button>
+      </div>
+      <div class="modal-body">
+        Are you fucking sure you want to remove this piece of digital tech?
+      </div>
+      <div class="modal-footer border-3">
+        <button type="button" class="btn btn-secondary me-3" data-bs-dismiss="modal" (click)="cancel()">Cancel</button>
+        <button type="button" class="btn btn-primary bg-danger border-danger" data-bs-dismiss="modal"
+                (click)="confirm()">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>

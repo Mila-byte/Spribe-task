@@ -1,0 +1,58 @@
+<div class="card w-100 mb-4 position-relative">
+  <img *ngIf="readMode" [src]="profile.photo" class="card-img-top" alt="...">
+  <img *ngIf="!readMode" [src]="editedProfile.photo" class="card-img-top" alt="...">
+  <ng-template [ngIf]="!readMode">
+    <label class="form-file violet-button btn fw-bolder position-absolute translate-middle" for="formFile">Change
+      image</label>
+    <input class="d-none form-file violet-button btn fw-bolder position-absolute translate-middle"
+           type="file"
+           id="formFile"
+           (change)="onChangeFileUpload($event)"
+    >
+  </ng-template>
+  <div class="card-body">
+    <div *ngIf="readMode" class="profile-data d-flex justify-content-between">
+      <h5 class="card-title">{{ profile.name }}</h5>
+      <p class="card-text mb-2">{{ profile.age }} y.o</p>
+    </div>
+    <div *ngIf="!readMode"
+         class="g-3 needs-validation d-flex justify-content-between"
+         [ngClass]="{ 'was-validated': validation}"
+         novalidate>
+      <div class="d-flex flex-column w-75 me-3">
+        <label for="name" class="form-label">Name</label>
+        <input [(ngModel)]="editedProfile.name"
+               type="text"
+               class="form-control w-100"
+               id="name"
+               minlength="2"
+               name="name"
+               required>
+        <div class="invalid-feedback">
+          Please enter a username.
+        </div>
+      </div>
+      <div class="d-flex flex-column" >
+        <label for="age" class="form-label">Age</label>
+        <input [(ngModel)]="editedProfile.age"
+               type="number"
+               class="form-control w-100"
+               id="age"
+               min="1"
+               max="99"
+               required>
+        <div class="invalid-feedback">
+          Please enter age.
+        </div>
+      </div>
+    </div>
+    <div class="profile-buttons d-flex justify-content-between">
+      <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              class="btn border border-danger text-danger fw-bolder" (click)="openConfirmModal()">Remove
+      </button>
+      <button type="submit" class="btn fw-bolder violet-button"
+              (click)="setEditStatus()">{{ readMode ? 'Edit' : 'Save' }}</button>
+    </div>
+  </div>
+</div>
+
